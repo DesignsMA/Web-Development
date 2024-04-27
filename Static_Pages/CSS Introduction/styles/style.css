@@ -10,15 +10,18 @@
     Use the CSS padding property for space inside the border
     Use the CSS margin property for space outside the border
 */
-
+:root {
+    --font-default:"Poppins", sans-serif;
+	
+}
 .header {
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-default);
     color: #333;
     margin: 0;
     padding: 20px;
 }
 .header p {
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-default);
     font-weight: 100px;
     font-size: 15px;
     float: left;
@@ -37,7 +40,7 @@
     background-color: #6bc9ff;
     border-radius: 20px;
     text-align: justify;
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-default);
     font-size: 20px;
     color: #ffffff;
     font-weight: 300;
@@ -47,9 +50,15 @@
 .card:nth-child(3) {
     background-color: #ae7cff;
 }
+.card:nth-child(4) {
+    background-color: hwb(0 32% 0%);
+}
+.card:nth-child(5) {
+    background-color: #7cff92;
+}
 
 .card-bt {
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-default);
     font-size: 15px;
     font-weight: 600;
     color: #ffffff;
@@ -74,6 +83,12 @@
 .card-bt:hover {
     background-position: right center;
 }
-@keyframes card-bt {
-    
+
+.images {
+    padding: 20px;
+}
+.images-title {
+    font-family: var(--font-default);
+    font-weight: 700;
+    text-align: center	;
 }

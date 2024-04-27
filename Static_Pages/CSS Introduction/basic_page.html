@@ -6,20 +6,44 @@
         <link rel="stylesheet" href="styles/reset.css">
     </head>
     <body>
-        <header class="header">
+        <header class="header" id="top">
             <h1 class="header-title">Page Title</h1>
             <p>OPTION 1</p>
             <p>OPTION 2</p>
             <p>OPTION 3</p>
         </header>
-        <div class="card">
+        <div class="card" id="C1">
             <p class="card-p">This is a card!</p>
-            <button class="card-bt" onclick="document.location='header-title'">HTML Tutorial</button>
+            <button class="card-bt" onclick="document.location='#C5'">HTML Tutorial</button>
         </div>
 
         <div class="card">
             <p class="card-p">This is a card!</p>
             <button class="card-bt" onclick="document.location='header-title'">HTML Tutorial</button>
         </div>
+        <div class="card">
+            <p class="card-p">This is a card!</p>
+            <button class="card-bt" onclick="document.location='header-title'">HTML Tutorial</button>
+        </div>
+        <div class="card">
+            <p class="card-p">This is a card!</p>
+            <button class="card-bt" onclick="document.location='header-title'">HTML Tutorial</button>
+        </div>
+        <div class="card" id="C5">
+            <p class="card-p">This is a card!</p>
+            <button class="card-bt" onclick="document.location='#top'">HTML Tutorial</button>
+        </div>
+        <section class="images">
+            <h5 class="images-title">IMAGE SECTION</h5>
+            <img src="images/plant.jpg" alt="plant" class="images-img" width="200px", height=auto>
+        </section>
+        
     </body>
 </html>
+<!--
+Use the <a> element to define a link
+Use the href attribute to define the link address
+Use the target attribute to define where to open the linked document
+Use the <img> element (inside <a>) to use an image as a link
+Use the mailto: scheme inside the href attribute to create a link that opens the user's email program
+-->
