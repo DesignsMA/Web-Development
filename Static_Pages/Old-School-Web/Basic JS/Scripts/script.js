@@ -14,7 +14,7 @@ info.textContent = 'Below is a dynamic list. Click anywhere on the page to add a
 
 container.appendChild(info)
 container.appendChild(list)
-document.body.appendChild(container)
+document.querySelector(".notes").appendChild(container)
 
 html.onclick = function() {
   const listItem = document.createElement('li');
@@ -24,8 +24,11 @@ html.onclick = function() {
   const listContent = prompt('What content do you want the list item to have?');
   listItem.textContent = listContent;
   list.appendChild(listItem);
-  document.querySelector(`#item_${id-1}`).style.backgroundColor = `rgb(${getRandomInt(0,255)}, ${getRandomInt(0,255)}, ${getRandomInt(0,255)})`;
-
+  color =`rgb(${getRandomInt(0,255)}, ${getRandomInt(0,255)}, ${getRandomInt(0,255)})`
+  
+  element = document.querySelector(`#item_${id-1}`);
+  element.style.backgroundColor = color;
+  element.style.filter = `drop-shadow(0 0 25px ${color})`;
 
   listItem.onclick = function(e) {
     e.stopPropagation();
