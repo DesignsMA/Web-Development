@@ -12,7 +12,6 @@ html {
 .containerV {
     display: flex;
     flex-flow: column wrap;
-    align-items: center;
 }
 
 .bgImg {
@@ -38,7 +37,7 @@ html {
 
 
 .headTitle {
-    background-color: #ff1f7139;
+    background-color: #ff55711c;
     color: #ffffff;
     margin: None;
     padding: 0.5rem;
@@ -63,3 +62,22 @@ html {
     color: #ffffff;
 }
 
+.formContainer {
+    margin: 2rem;
+    padding: 1rem;
+    align-items: left;
+    background-color: #ff8d8d33;
+    border-radius: 10px;
+    backdrop-filter: blur(20px);
+    height: 400px;
+    mask-image: linear-gradient(135deg, rgb(0, 0, 0), transparent 95%);;
+    filter: drop-shadow(rgba(255, 31, 39, 0.367) 0px 0px 25px);
+
+}
+
+.formInfo {
+    color: white;
+    font-family: Montserrat;
+    font-weight: 100;
+    text-align: justify;
+}
