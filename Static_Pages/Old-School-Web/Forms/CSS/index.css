@@ -65,19 +65,80 @@ html {
 .formContainer {
     margin: 2rem;
     padding: 1rem;
-    align-items: left;
+    align-items: flex-start;
+    color: white;
     background-color: #ff8d8d33;
     border-radius: 10px;
     backdrop-filter: blur(20px);
     height: 400px;
-    mask-image: linear-gradient(135deg, rgb(0, 0, 0), transparent 95%);;
+    mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0));
     filter: drop-shadow(rgba(255, 31, 39, 0.367) 0px 0px 25px);
-
+  /* Ensure smooth transition */
+  transition: mask-image 0s ease-in-out;
 }
 
+/* Play animation forward on hover */
+.formContainer:hover {
+    animation: mask-fade 0.3s ease-in-out forwards;
+}
+
+/* Play animation in reverse when hover is removed */
+.formContainer:hover::after {
+    animation: mask-fade 0.3s ease-in-out reverse forwards;
+}
 .formInfo {
     color: white;
     font-family: Montserrat;
     font-weight: 100;
     text-align: justify;
 }
+
+@keyframes mask-fade {
+    0% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)); }
+    1.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.0167)); }
+    3.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.0333)); }
+    5% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.05)); }
+    6.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.0667)); }
+    8.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.0833)); }
+    10% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.1)); }
+    11.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.1167)); }
+    13.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.1333)); }
+    15% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.15)); }
+    16.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.1667)); }
+    18.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.1833)); }
+    20% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.2)); }
+    21.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.2167)); }
+    23.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.2333)); }
+    25% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.25)); }
+    26.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.2667)); }
+    28.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.2833)); }
+    30% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.3)); }
+    31.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.3167)); }
+    33.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.3333)); }
+    35% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.35)); }
+    36.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.3667)); }
+    38.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.3833)); }
+    40% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.4)); }
+    41.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.4167)); }
+    43.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.4333)); }
+    45% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.45)); }
+    46.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.4667)); }
+    48.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.4833)); }
+    50% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.5)); }
+    53.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.5333)); }
+    56.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.5667)); }
+    60% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.6)); }
+    63.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.6333)); }
+    66.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.6667)); }
+    70% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.7)); }
+    73.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.7333)); }
+    76.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.7667)); }
+    80% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.8)); }
+    83.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.8333)); }
+    86.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.8667)); }
+    90% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.9)); }
+    93.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.9333)); }
+    96.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.9667)); }
+    100% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 1)); }
+  }
+  
