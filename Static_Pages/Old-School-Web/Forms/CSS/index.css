@@ -2,12 +2,48 @@ html {
     background-color: black;
 }
 
+/* Estilo general de la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra vertical */
+    height: 12px; /* Altura de la barra horizontal */
+}
+
+/* Estilo de la pista (fondo) de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+    background: #f1f1f108; /* Color de fondo */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Estilo del "pulgarcito" (la parte móvil) de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+    background-color: #ff484893; /* Color del pulgarcito */
+    border-radius: 10px; /* Bordes redondeados */
+    border: none; /* Borde alrededor del pulgarcito */
+}
+
+/* Estilo del "pulgarcito" cuando el cursor está sobre él */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ff4040; /* Color del pulgarcito al pasar el cursor */
+    transition: background-color 0.7s; /* Transición suave */
+}
+
+/* Estilo de los botones de flecha (opcional) */
+::-webkit-scrollbar-button {
+    display: none; /* Oculta los botones de flecha */
+}
+
+/* Estilo de la esquina donde se encuentran las barras de desplazamiento */
+::-webkit-scrollbar-corner {
+    background: #f1f1f1; /* Color de fondo */
+}
+
 .containerH {
     display: flex; /*or inline flex*/
     flex-flow: row wrap; /*shorthand of flex direction and wrap*/
-    justify-content: center;
-    justify-items: center;
+    justify-content: left;
+    justify-items: left;
 }
+
 
 .containerV {
     display: flex;
@@ -18,16 +54,16 @@ html {
     position: fixed;
     z-index: -1;
     display: block;
-    background-image: linear-gradient(black 20%, transparent 80%),url('../Resources/bg1.png');
+    background-image: linear-gradient(black 10%, transparent),url('../Resources/bg1.png');
     background-position: center;
     background-size: cover;
     width: 100%;
     height: 100%;
-    -webkit-filter: blur(10px);
-    -moz-filter: blur(10px);
-    -o-filter: blur(10px);
-    -ms-filter: blur(10px);
-    filter: blur(10px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
 
 }
 
@@ -50,95 +86,125 @@ html {
 
 .titleItem{
     font-size: 50px;
-    margin-left: 5rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.titleItem:nth-child(1) {
-    margin-left: 0;
-    color: #ffffff;
-}
-
-.titleItem:nth-child(2) {
-    color: #ffffff;
-}
 
 .formContainer {
     margin: 2rem;
+    margin-left: 10%;
+    margin-right: 10%;
     padding: 1rem;
     align-items: flex-start;
     color: white;
-    background-color: #ff8d8d33;
+    background: linear-gradient(135deg, rgba(255, 143, 143, 0.134) 10%, rgba(255, 0, 166, 0.033)) 90%;
     border-radius: 10px;
-    backdrop-filter: blur(20px);
-    height: 400px;
-    mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0));
-    filter: drop-shadow(rgba(255, 31, 39, 0.367) 0px 0px 25px);
-  /* Ensure smooth transition */
-  transition: mask-image 0s ease-in-out;
+    backdrop-filter: blur(10px);
+    overflow-x:scroll;
+    transition: all 1s ease-in-out;
+    scrollbar-base-color: black;
 }
 
-/* Play animation forward on hover */
+
 .formContainer:hover {
-    animation: mask-fade 0.3s ease-in-out forwards;
+    backdrop-filter: blur(20px);
 }
 
-/* Play animation in reverse when hover is removed */
-.formContainer:hover::after {
-    animation: mask-fade 0.3s ease-in-out reverse forwards;
+.formList {
+    width: 100%;
 }
+
 .formInfo {
     color: white;
     font-family: Montserrat;
-    font-weight: 100;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-align: justify;
+    display: block;
+}
+
+.formField {
+    margin-top: 1.5rem;
+}
+
+.formLabel {
+    color: white;
+    font-family: Montserrat;
+    font-weight: 200;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-right: auto;
     text-align: justify;
 }
 
-@keyframes mask-fade {
-    0% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)); }
-    1.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.0167)); }
-    3.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.0333)); }
-    5% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.05)); }
-    6.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.0667)); }
-    8.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.0833)); }
-    10% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.1)); }
-    11.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.1167)); }
-    13.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.1333)); }
-    15% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.15)); }
-    16.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.1667)); }
-    18.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.1833)); }
-    20% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.2)); }
-    21.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.2167)); }
-    23.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.2333)); }
-    25% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.25)); }
-    26.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.2667)); }
-    28.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.2833)); }
-    30% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.3)); }
-    31.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.3167)); }
-    33.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.3333)); }
-    35% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.35)); }
-    36.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.3667)); }
-    38.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.3833)); }
-    40% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.4)); }
-    41.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.4167)); }
-    43.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.4333)); }
-    45% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.45)); }
-    46.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.4667)); }
-    48.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.4833)); }
-    50% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.5)); }
-    53.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.5333)); }
-    56.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.5667)); }
-    60% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.6)); }
-    63.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.6333)); }
-    66.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.6667)); }
-    70% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.7)); }
-    73.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.7333)); }
-    76.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.7667)); }
-    80% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.8)); }
-    83.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.8333)); }
-    86.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.8667)); }
-    90% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.9)); }
-    93.33% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.9333)); }
-    96.67% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.9667)); }
-    100% { mask-image: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 1)); }
-  }
-  
+.formSubmit {
+    align-items: center !important;
+    align-content: center !important;
+}
+
+.formInput {
+    background-color: #ff49675d;
+    border-radius: 15px;
+    padding: 5px;
+    padding-left: 1rem;
+    font-family: Montserrat;
+    font-weight: 200;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    width: 80%;
+    transition: all 0.5s ease-in-out;
+}
+
+.formInput:hover {
+    box-shadow: #ff216f6d 0px 0px 15px;
+}
+
+.formInput:focus {
+    inset: none;
+    border: none;
+    background-color: #ff494914;
+    text-shadow: 0 0 9px #ffffff;
+    box-shadow: #0000001b 0px 0px 15px;
+}
+
+
+
+#msg {
+    margin-left: auto;
+    text-decoration: none;
+    resize: vertical;
+    transition-property: opacity, transform, background-color, text-shadow, border, box-shadow;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+}
+
+#btnSubmit {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.7rem;
+    margin-top: 2rem;
+    width: 50%;
+    font-family: Montserrat;
+    font-weight: 300;
+    font-size: 1rem;
+    text-align: center;
+    color:  #ffffff;
+    cursor: pointer;
+    background-color: rgb(253, 44, 44);
+    border-radius: 20px;
+    border: 1px solid #ff002f;
+    transition: all 0.4s ease-in-out;
+}
+
+#btnSubmit:hover {
+    box-shadow: 0 0px 16px 0 rgba(243, 60, 60, 0.533), 0 6px 20px 0 rgba(255, 55, 55, 0.089), inset 0 0 15px #ff934b20;
+    transform: scale(1.07);
+}
+
+#btnSubmit:active {
+    transition: all 0.2s ease-in-out;
+    transform: scale(0.97);
+}
