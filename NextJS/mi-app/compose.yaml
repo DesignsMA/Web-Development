@@ -1,0 +1,36 @@
+services:
+  db:
+    image: mysql:9.7
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_0900_ai_ci
+    container_name: mysql-dev
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: app_db
+      MYSQL_USER: app_user
+      MYSQL_PASSWORD: app_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init:/docker-entrypoint-initdb.d
+
+  app:
+    image: node:22-alpine
+    container_name: nextjs-app
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: sh -c "npm install && npm run dev"
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: db
+      DB_USER: app_user
+      DB_PASSWORD: app_pass
+      DB_NAME: app_db
+    depends_on:
+      - db
+
+volumes:
+  db_data:
