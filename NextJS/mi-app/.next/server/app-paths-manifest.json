@@ -1,0 +1,7 @@
+{
+  "/api/insert/route": "app/api/insert/route.js",
+  "/api/query/route": "app/api/query/route.js",
+  "/api/table/route": "app/api/table/route.js",
+  "/api/update/route": "app/api/update/route.js",
+  "/dashboard/page": "app/dashboard/page.js"
+}

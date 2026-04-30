@@ -1,0 +1,35 @@
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <title>React First Steps</title>
+      <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+      <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+      <!-- Babel Script -->
+      <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/jsx">
+      function Header() {
+          return <h1>My First React App</h1>;
+      }
+
+      function Homepage()
+      {
+        return <div>
+          {/* This is a comment in JSX */}
+          < Header />
+          <p>Welcome to my first React application!</p>
+        </div>;
+      }
+
+      const app = document.getElementById('app');
+
+      const root = ReactDOM.createRoot(app);
+
+      root.render(<Homepage />);
+    </script>
+  </body>
+</html>
