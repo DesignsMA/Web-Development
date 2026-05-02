@@ -69,7 +69,7 @@ export const QUERIES: Record<string, QueryDef> = {
   },
 
   top5_pago_hora: {
-    label: "Top 5 mayor pago/hr",
+    label: "5 Empleados mejor pagados",
     description: "Los 5 empleados con el pago por hora más alto en cualquier proyecto.",
     category: "joins",
     build: () => ({
