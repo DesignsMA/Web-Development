@@ -1,0 +1,49 @@
+body{
+    background-color: #161616;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+    text-align: center;
+}
+
+p{
+    color: aquamarine;
+}
+
+div h2{
+    color: aqua;
+}
+
+/*IDs y Clases*/
+
+#parrafo-especial {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: blueviolet;
+}
+
+.parrafo{
+    font-style: italic;
+}
+
+a,img{
+    display: block;
+}
+
+a{
+    margin: 50px 20px;
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: aqua;
+}
+
+img{
+    width: 70%;
+    margin: auto;
+    border-radius: 20px;
+}
