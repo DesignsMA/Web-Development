@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 3</title>
+
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ff5353">
+    <meta name="description" content="Página 3 de ejemplo para revisar elementos básicos de HTML.">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="Página 3 de ejemplos HTML">
+    <meta property="og:description" content="Ejemplos de HTML">
+    <meta property="og:image" content="gatito.jpg">
+    <meta property="og:image:alt" content="Gatito recostado.">
+
+    <!--Indicar páginas en lenguajes diferentes-->
+    <link rel="alternate" href="https://pag3.com/en" hreflang="es-GB">
+    <!--Página original-->
+    <link rel="canonical" href="https://pag3.com">
+
+    <link rel="icon" type="image/jpg" href="gatito.jpg">
+</head>
+
+
+<body>
+    <header>
+        <h1>Bienvenido a la Página 3</h1>
+        <nav>
+            <a href="#lista-1">Lista 1</a> <!--Enlace interno-->
+            <a href="#lista-2">Lista 2</a> <!--Enlace interno-->
+            <a href="https://www.google.com" target="_blank" rel="noreferrer">Google</a> <!--Para privacidad usar noreferrer para no enviar el agente de usuario e informacion del navegador-->
+        </nav>
+    </header>
+
+    <dialog id="modal">
+        <h1>Esto es una modal</h1>
+        <p>Totalmente nativo!</p>
+        <button id="hide">Cerrar</button>
+    </dialog>
+
+    <button id="show">Ver más información</button>
+
+    <script>
+        console.log("Ejecutando script modal")
+        window.show.addEventListener('click', () =>
+    {
+        window.modal.showModal()
+    })
+        window.hide.addEventListener('click', () =>
+        window.modal.close() )
+    </script>
+    
+    <video autoplay loop muted controls src="https://filesamples.com/samples/video/mp4/sample_960x400_ocean_with_audio.mp4"></video>
+
+    <main>
+        <h2 id="lista-0">Lista 0</h2>
+
+        <ul>
+            <li class="list-item" >Item 1</li>
+            <li class="list-item" >Item 2</li>
+            <li class="list-item" >Item 3</li>
+            <li class="list-item" >Item 4</li>
+            <li class="list-item" >Item 5</li>
+            <li class="list-item" >Item 6</li>
+            
+            <li>
+                <a href="https://www.google.com" target="_blank" rel="noreferrer">Google</a>
+            </li>
+        </ul>
+
+        <section>
+            <h4>Océano</h4>
+            <img
+                loading="lazy" 
+                src="lazy.png"
+                alt="Captura de océano">
+        </section>
+        <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed doeiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+        <h2 id="lista-1">Lista 1</h2>
+
+        <ul>
+            <li class="list-item" >Item 1</li>
+            <li class="list-item" >Item 2</li>
+            <li class="list-item" >Item 3</li>
+            <li class="list-item" >Item 4</li>
+            <li class="list-item" >Item 5</li>
+            <li class="list-item" >Item 6</li>
+            
+            <li>
+                <a href="https://www.google.com" target="_blank" rel="noreferrer">Google</a>
+            </li>
+        </ul>
+        <a download href="gatito.jpg"> <!--Link de imagen-->
+            <img
+                style ="width: 100%; aspect-ratio: 16/9;"
+                id="gatito-image"
+                width=200
+                height=200
+                title="Foto de Gatito"
+                alt="Gatito acostado."
+                src="gatito.jpg"    
+            >
+        </a>
+
+        <h2 id="lista-2">Lista 2</h2>
+
+        <ol type="A" reversed>
+            <li class="list-item" >Item 1</li>
+            <li class="list-item" >Item 2</li>
+            <li class="list-item" >Item 3</li>
+            <li class="list-item" >Item 4</li>
+            <li class="list-item" >Item 5</li>
+            <li class="list-item" >Item 6</li>
+            
+            <li>
+                <a href="https://www.google.com" target="_blank">Google</a>
+            </li>
+        </ol>
+
+        <section>
+            <h2>Preguntas frecuentes</h2>
+            <details open>
+                <summary>¿Qué es HTML?</summary>
+                <p>HTML es un lenguaje de marcado que se utiliza para estructurar contenido en la web.</p>
+            </details>
+        </section>
+
+        <section>
+            <h2>Formulario de contacto</h2>
+            <form action="/" method="POST">
+                <fieldset>
+                    <legend>Información personal</legend>
+                    <div>
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" placeholder="Mario Antonio Alvarez" required>
+                    </div>
+
+                    <label>
+                        Correo: 
+                        <input type="email" id="email" name="email" placeholder="mail@gmail.com">
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Información adicional</legend>
+                    <label>
+                        Teléfono: 
+                        <input type="tel" name="tel" placeholder="+52 123 1877 183">
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Otros</legend>
+
+                    <div>
+                        <label for="why">¿Por que razón quieres contactar?</label>
+
+                        <select name="why" id="why">
+                            <option value="1">Trabajo</option>
+                            <option value="2">Duda</option>
+                            <option value="3">Más información</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="terms">¿Aceptas los términos?</label>
+                        <input type="checkbox" name="terms" id="terms" required>
+                    </div>
+
+                    <div>
+                        <datalist id="languages">
+                            <option value="Javascript"></option>
+                            <option value="Python"></option>
+                            <option value="Java"></option>
+                            <option value="C"></option>
+                        </datalist>
+                        <label>
+                            ¿Con que necesitas ayuda?
+                            <input list="languages" name="languages">
+                        </label>
+                    </div>
+
+                </fieldset>
+
+                <input type="submit" value="Enviar contacto">
+            </form>
+        </section>
+
+    </main>
+    <footer>
+        Copyright © 2026 - La Página Más Simple del Mundo
+
+        <a href="mailto:examplemail@gmail.com">Enviame un correo</a>
+        <a href="tel:+52123456578">Llama a mi número</a>
+        <a href="https://wa.me/52123456578?text=Hola,%20me%20interesa">Enviar mensaje</a>   
+    </footer>
+</body>
+
+</html>
